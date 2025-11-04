@@ -1,0 +1,813 @@
+/* --- CONFIGURACIÓN GLOBAL Y FUENTES --- */
+
+/* Keyframe para la animación de fondo sutil */
+@keyframes moveSpotlight {
+    0%   { background-position: -100% -100%; }
+    50%  { background-position: 200% 200%; }
+    100% { background-position: -100% -100%; }
+}
+
+/* Keyframe para la animación de entrada de contenido */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframe para el modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    overflow: hidden; /* Evita el scroll */
+    
+    /* ---- Fondo animado con luz roja sutil ---- */
+    background-color: #141414; /* Color de fallback */
+    background-image: radial-gradient(circle at center, #301c1c 0%, #141414 40%); /* Rojo oscuro a negro */
+    background-size: 250% 250%; /* Gradiente grande para que sea sutil */
+    animation: moveSpotlight 40s linear infinite;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.presentacion-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* --- ===== ESTILO BASE DE DIAPOSITIVA (CORREGIDO) ===== --- */
+.diapositiva {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* ===== PADDING CORREGIDO ===== */
+    /* Se añade 120px de padding inferior para la "zona segura" de los botones */
+    padding: 5vw 5vw 120px 5vw; 
+    
+    text-align: center;
+    
+    /* Animación de entrada/salida (Solo Opacidad) */
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none; /* No se puede interactuar si no está activa */
+}
+/* --- ===== FIN CORRECCIÓN ===== --- */
+
+
+/* --- DIAPOSITIVA ACTIVA (VISIBLE) --- */
+.diapositiva.activa {
+    opacity: 1;
+    z-index: 10;
+    pointer-events: auto; /* Se puede interactuar */
+}
+
+/* --- ANIMACIONES DE ENTRADA DE CONTENIDO --- */
+.diapositiva.activa .titulo-slide,
+.diapositiva.activa .subtitulo-slide,
+.diapositiva.activa .instruccion-interactiva,
+.diapositiva.activa .explicacion-posicion,
+.diapositiva.activa .explicacion-conclusion,
+.diapositiva.activa .btn-descarga, /* Añadido a la animación */
+.diapositiva.activa .autor { /* Añadido a la animación */
+    animation: fadeInUp 0.6s ease-out 0.3s backwards; /* delay de 0.3s */
+}
+
+/* ... (Otras animaciones de entrada) ... */
+.diapositiva.activa .reglas-grid > *,
+.diapositiva.activa .agentes-container > *,
+.diapositiva.activa .posiciones-diagrama > *,
+.diapositiva.activa .habitus-infografia > *,
+.diapositiva.activa .capitales-container > *,
+.diapositiva.activa .simbolico-grid > *,
+.diapositiva.activa .transformacion-grid > *,
+.diapositiva.activa .conclusion-flow > * { /* Añadido */
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+/* Stagger (escalonado) para las tarjetas */
+/* ... (reglas de animation-delay ... */
+.diapositiva.activa .reglas-grid > *:nth-child(1),
+.diapositiva.activa .agentes-container > *:nth-child(1),
+.diapositiva.activa .simbolico-grid > *:nth-child(1),
+.diapositiva.activa .transformacion-grid > *:nth-child(1),
+.diapositiva.activa .capitales-container > *:nth-child(1),
+.diapositiva.activa .conclusion-flow > *:nth-child(1) { /* Añadido */
+    animation-delay: 0.4s;
+}
+.diapositiva.activa .reglas-grid > *:nth-child(2),
+.diapositiva.activa .agentes-container > *:nth-child(2),
+.diapositiva.activa .simbolico-grid > *:nth-child(2),
+.diapositiva.activa .transformacion-grid > *:nth-child(2),
+.diapositiva.activa .capitales-container > *:nth-child(2),
+.diapositiva.activa .conclusion-flow > *:nth-child(2) { /* Añadido */
+    animation-delay: 0.5s;
+}
+.diapositiva.activa .reglas-grid > *:nth-child(3),
+.diapositiva.activa .agentes-container > *:nth-child(3),
+.diapositiva.activa .simbolico-grid > *:nth-child(3),
+.diapositiva.activa .transformacion-grid > *:nth-child(3),
+.diapositiva.activa .capitales-container > *:nth-child(3),
+.diapositiva.activa .conclusion-flow > *:nth-child(3) { /* Añadido */
+    animation-delay: 0.6s;
+}
+.diapositiva.activa .reglas-grid > *:nth-child(4),
+.diapositiva.activa .agentes-container > *:nth-child(4),
+.diapositiva.activa .simbolico-grid > *:nth-child(4),
+.diapositiva.activa .transformacion-grid > *:nth-child(4),
+.diapositiva.activa .capitales-container > *:nth-child(4),
+.diapositiva.activa .conclusion-flow > *:nth-child(4) { /* Añadido */
+    animation-delay: 0.7s;
+}
+.diapositiva.activa .capitales-container > *:nth-child(5),
+.diapositiva.activa .conclusion-flow > *:nth-child(5) { /* Añadido */
+    animation-delay: 0.8s;
+}
+
+/* --- ESTILOS DE ELEMENTOS INTERACTIVOS (MODAL) --- */
+/* Cursales para elementos tocables/clicables */
+[data-modal-id], .capital-item {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+[data-modal-id]:hover, .capital-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+
+/* --- TIPOGRAFÍA --- */
+h1, h2, h3, h4, p {
+    margin: 0.5em 0;
+}
+
+.titulo-principal {
+    font-size: 5.5vw;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.subtitulo {
+    font-size: 2vw;
+    font-weight: 300;
+    color: #E50914; /* Rojo Netflix */
+}
+
+/* ===== ESTILO AUTOR Y BOTÓN DE DESCARGA (CORREGIDOS) ===== */
+.btn-descarga {
+    /* Se quita position: absolute y todo lo relacionado */
+    margin-top: 15px; /* Espacio desde el autor */
+    
+    font-size: 1vw; /* Pequeño y sutil */
+    font-weight: 400;
+    color: #aaa; /* Color gris sutil, no blanco brillante */
+    background-color: rgba(34, 34, 34, 0.7); /* Fondo oscuro semitransparente */
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid #444; /* Borde sutil */
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.btn-descarga:hover {
+    background-color: #E50914; /* Resalta en rojo al pasar el mouse */
+    color: #fff;
+    border-color: #E50914;
+}
+
+.autor {
+    /* Se quita position: absolute y todo lo relacionado */
+    margin-top: 40px; /* Espacio desde los logos */
+    font-size: 1.1vw;
+    font-weight: 300;
+}
+/* ===== FIN ESTILOS AUTOR/BOTÓN ===== */
+
+
+/* --- DIAPOSITIVA 1: Portada y Logos --- */
+.logos-portada {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+.logo-fake {
+    font-size: 3vw;
+    font-weight: 900;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+}
+.logo-fake.netflix { background-color: #E50914; }
+.logo-fake.disney { background-color: #0A2DE0; }
+.logo-fake.max { background-color: #6028FF; }
+.logo-fake.prime { background-color: #00A8E1; }
+
+/* --- DIAPOSITIVA 2 y 15: Gigante / Intro --- */
+.contenido-slide.centrado {
+    max-width: 80%;
+}
+.pregunta-clave {
+    font-size: 2.5vw;
+    font-weight: 300;
+    line-height: 1.3;
+}
+.texto-gigante {
+    font-size: 9vw;
+    font-weight: 900;
+    margin: 0.1em 0;
+    line-height: 1;
+    color: #E50914;
+}
+.intro-texto {
+    font-size: 1.5vw;
+    font-style: italic;
+    color: #aaa;
+}
+
+/* --- DIAPOSITIVAS 3, 7, 11, 13: Subportadas --- */
+.diapositiva.subportada {
+    text-align: left;
+    align-items: flex-start;
+    background: linear-gradient(90deg, #181818 50%, #141414 100%);
+}
+.diapositiva.subportada .contenido-slide {
+    width: 100%; /* Asegura que ocupe el ancho para alinear a la izquierda */
+}
+.numero-seccion {
+    font-size: 2vw;
+    font-weight: 700;
+    color: #E50914;
+    margin-bottom: -10px;
+}
+.titulo-seccion {
+    font-size: 7vw;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1;
+}
+.pregunta-interactiva {
+    font-size: 2.2vw;
+    font-weight: 300;
+    margin-top: 20px;
+    border-left: 4px solid #E50914;
+    padding-left: 20px;
+}
+.pregunta-interactiva strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+
+/* --- TÍTULOS DE SLIDES (General) --- */
+.titulo-slide {
+    font-size: 2.5vw;
+    font-weight: 700;
+    margin-bottom: 1em; /* Reducido */
+    color: #E50914;
+}
+.subtitulo-slide {
+    font-size: 1.8vw;
+    font-weight: 400;
+    margin-top: -1em;
+    margin-bottom: 1.5em; 
+    color: #ccc;
+}
+/* Ya no hay <strong> en "tener", así que esta regla solo aplica a otras */
+.subtitulo-slide strong {
+    color: #E50914;
+    font-weight: 700;
+}
+
+
+/* --- NUEVO: Estilo Sutil "Toca para saber más" --- */
+.toca-para-mas {
+    display: block; /* Para que aparezca en una línea nueva */
+    font-size: 0.9vw;
+    font-weight: 300;
+    font-style: italic;
+    color: #aaa; /* Color gris sutil */
+    margin-top: 8px;
+}
+/* ---- FIN NUEVO ---- */
+
+
+/* --- DIAPOSITIVA 4: Grid de Reglas --- */
+.reglas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    width: 80vw;
+}
+.regla-card {
+    background-color: #222;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+.icono-card {
+    font-size: 3vw;
+    display: block;
+    margin-bottom: 10px;
+}
+.regla-card h3 {
+    font-size: 1.5vw;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.regla-card p {
+    font-size: 1vw; /* Restaurado a tamaño normal */
+    font-weight: 300; /* Restaurado a peso normal */
+    line-height: 1.4;
+    color: #ccc; /* Restaurado a color normal */
+}
+
+/* --- DIAPOSITIVA 5: Agentes --- */
+.agentes-container {
+    display: flex;
+    justify-content: space-around;
+    width: 90vw;
+}
+.agente-item {
+    width: 20%;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+.icono-agente {
+    font-size: 4vw;
+}
+.agente-item h3 {
+    font-size: 1.5vw;
+    color: #E50914;
+}
+.agente-item p {
+    font-size: 1vw;
+    color: #ccc; /* Restaurado */
+    font-weight: 300; /* Restaurado */
+}
+
+/* --- DIAPOSITIVA 6: Posiciones --- */
+.posiciones-diagrama {
+    width: 70vw;
+}
+.posicion {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.posicion.dominante {
+    background-color: #333;
+    border: 2px solid #E50914;
+}
+.posicion.subordinada {
+    background-color: #222;
+    border: 2px dashed #555;
+}
+.posicion h4 {
+    font-size: 1.2vw;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.posicion p {
+    font-size: 1.4vw;
+    font-weight: 700;
+    color: #fff; /* Restaurado */
+}
+.explicacion-posicion {
+    font-size: 1.2vw;
+    font-style: italic;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+/* --- DIAPOSITIVA 8: Infografía Habitus --- */
+.habitus-infografia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 90vw;
+}
+.habitus-inputs, .habitus-outputs, .habitus-cerebro {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+.habitus-inputs, .habitus-outputs {
+    flex: 1;
+}
+.habitus-cerebro {
+    flex: 0.8;
+}
+.habitus-cerebro h3 {
+    color: #E50914;
+}
+.habitus-cerebro p {
+    color: #ccc;
+    font-weight: 300;
+}
+.habitus-flecha {
+    font-size: 4vw;
+    color: #E50914;
+    font-weight: 900;
+}
+.label-habitus {
+    font-size: 1vw;
+    font-weight: 700;
+    color: #aaa;
+    display: block;
+    margin-bottom: 15px;
+}
+.input-item, .output-item {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1vw;
+    color: #ccc;
+    font-weight: 300;
+}
+
+/* --- DIAPOSITIVA 10: Capitales (INTERACTIVA) --- */
+.instruccion-interactiva {
+    font-size: 1vw;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+.capitales-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 80vw;
+    margin-bottom: 30px;
+}
+.capital-item {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #222;
+    border: 2px solid #444;
+    flex: 1;
+}
+.icono-capital {
+    font-size: 4vw;
+    display: block;
+}
+.capital-item label {
+    font-size: 1.3vw;
+    font-weight: 700;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
+}
+/* Estilo del ícono activo (ya no es necesario, se usa el hover) */
+/* .capital-item.activa { ... } */
+
+
+/* --- DIAPOSITIVA 12: Capital Simbólico --- */
+.simbolico-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    width: 80vw;
+}
+.simbolico-item {
+    background-color: #222;
+    padding: 25px;
+    border-radius: 12px;
+}
+.simbolico-item h3 {
+    font-size: 1.5vw;
+    color: #E50914;
+}
+.simbolico-item p {
+    font-size: 1vw;
+    line-height: 1.4;
+    color: #ccc; /* Restaurado */
+    font-weight: 300; /* Restaurado */
+}
+
+/* --- DIAPOSITIVA 14: Transformación --- */
+.transformacion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 90vw;
+}
+.conversion-item {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+.conversion-item p {
+    font-size: 1vw;
+    margin-top: 15px;
+    line-height: 1.4;
+    color: #ccc; /* Restaurado */
+    font-weight: 300; /* Restaurado */
+}
+.capital-tag {
+    font-size: 1.2vw;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.flecha {
+    font-size: 1.5vw;
+    font-weight: 700;
+    color: #E50914;
+    margin: 0 10px;
+}
+/* Colores de tags */
+.capital-tag.economico { background-color: #2a7c2a; }
+.capital-tag.cultural { background-color: #a02c8e; }
+.capital-tag.social { background-color: #00A8E1; }
+.capital-tag.simbolico { background-color: #b1a11c; }
+
+
+/* --- ===== NUEVO: DIAPOSITIVA 15 (CONCLUSIÓN MEJORADA) ===== --- */
+.conclusion-flow {
+    display: flex;
+    flex-direction: column; /* Flujo Vertical */
+    align-items: center; /* Centrado Horizontal */
+    gap: 10px; /* Espacio reducido */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    max-width: 80vw; /* Límite para que no sea tan ancho */
+}
+.conclusion-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.conclusion-item .capital-tag {
+    font-size: 1.2vw; /* Tamaño reducido */
+}
+.conclusion-item .signo-mas {
+    font-size: 1.8vw; /* Tamaño reducido */
+    color: #E50914;
+    font-weight: 700;
+}
+.conclusion-item-secundario {
+    font-size: 1.1vw; /* Tamaño reducido */
+    font-style: italic;
+    color: #aaa;
+    margin-top: -5px; /* Espacio reducido */
+}
+.flecha-larga {
+    font-size: 2vw; /* Flecha más pequeña */
+    color: #E50914;
+    font-weight: 900;
+    margin: 5px 0; /* Espacio compacto */
+}
+
+.capital-meta, .capital-meta-final {
+    border: 2px solid #E50914;
+    padding: 10px 20px; /* Padding reducido */
+    border-radius: 10px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.capital-meta .capital-tag, .capital-meta-final .capital-tag {
+    font-size: 1.5vw !important; /* Tamaño reducido */
+}
+.capital-meta span:not(.capital-tag), .capital-meta-final span:not(.capital-tag) {
+    font-size: 1.1vw; /* Tamaño reducido */
+    color: #ccc;
+}
+
+.explicacion-conclusion {
+    font-size: 1.2vw; /* Tamaño reducido */
+    line-height: 1.6;
+    color: #ccc;
+    margin-top: 1.5em; /* Margen reducido */
+    max-width: 60vw; /* Más angosto para centrar */
+}
+.explicacion-conclusion strong {
+    color: #fff;
+    font-weight: 700;
+}
+/* --- ===== FIN ESTILOS CONCLUSIÓN ===== --- */
+
+
+/* --- CONTROLES DE NAVEGACIÓN (BOTTOM) --- */
+.nav-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+}
+.nav-btn {
+    background-color: #E50914;
+    color: white;
+    border: none;
+    font-size: 24px;
+    font-weight: 700;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.nav-btn:hover {
+    background-color: #f61a29;
+}
+.nav-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+#contador-slide {
+    font-size: 16px;
+    font-weight: 700;
+    width: 60px;
+    text-align: center;
+}
+
+/* --- MENÚ DE NAVEGACIÓN (ÍNDICE) --- */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 3000; /* Por encima de todo */
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+#menu-navegacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px; /* Ancho del menú */
+    height: 100vh;
+    background: #222;
+    z-index: 2900;
+    transform: translateX(-100%); /* Oculto por defecto */
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    padding: 20px;
+    padding-top: 80px; /* Espacio para el botón de cerrar */
+    border-right: 2px solid #E50914;
+}
+#menu-navegacion.menu-visible {
+    transform: translateX(0); /* Visible */
+}
+#menu-navegacion h3 {
+    color: #E50914;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+#menu-navegacion ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+#menu-navegacion li {
+    padding: 15px 10px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+#menu-navegacion li:hover {
+    background-color: #E50914;
+}
+/* Overlay para cerrar el menú */
+#menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: 2800; /* Debajo del menú, encima del contenido */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+}
+#menu-overlay.menu-overlay-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* --- MODAL (POP-UP) --- */
+#modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#modal-container.modal-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-contenido {
+    background: #f0f0f0; /* Fondo claro para el pop-up */
+    color: #141414; /* Texto oscuro */
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    text-align: left;
+    position: relative;
+    border: 2px solid #E50914;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    
+    /* Animación de entrada */
+    animation: modalFadeIn 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal-cerrar-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 36px;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+}
+.modal-cerrar-btn:hover {
+    color: #E50914;
+}
+
+#modal-titulo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #E50914;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+#modal-texto {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 400;
+}

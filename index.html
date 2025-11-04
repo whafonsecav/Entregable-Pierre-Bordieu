@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Campo del Streaming en LatAm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <button id="btn-menu" class="menu-btn">☰</button>
+
+    <nav id="menu-navegacion" class="menu-oculto">
+        <h3>Índice de Contenido</h3>
+        <ul>
+            <li data-goto-slide="0">1. Portada</li>
+            <li data-goto-slide="1">2. Introducción</li>
+            <li data-goto-slide="2">3. El Campo (Sección)</li>
+            <li data-goto-slide="3">4. Las 4 Reglas</li>
+            <li data-goto-slide="4">5. Los Jugadores</li>
+            <li data-goto-slide="5">6. Posiciones</li>
+            <li data-goto-slide="6">7. El Habitus (Sección)</li>
+            <li data-goto-slide="7">8. ¿Qué es el Habitus?</li>
+            <li data-goto-slide="8">9. Los Capitales (Sección)</li>
+            <li data-goto-slide="9">10. Los 5 Capitales</li>
+            <li data-goto-slide="10">11. Capital Simbólico (Sección)</li>
+            <li data-goto-slide="11">12. ¿Qué da Prestigio?</li>
+            <li data-goto-slide="12">13. La Transformación (Sección)</li>
+            <li data-goto-slide="13">14. Conversión de Capitales</li>
+            <li data-goto-slide="14">15. Conclusión</li>
+            <li data-goto-slide="15">16. ¡Gracias!</li>
+        </ul>
+    </nav>
+    <div id="menu-overlay" class="menu-overlay-oculto"></div>
+
+    <div class="presentacion-container">
+
+        <section class="diapositiva activa" data-slide="0">
+            <div class="contenido-slide">
+                <h1 class="titulo-principal">EL CAMPO DEL STREAMING</h1>
+                <h2 class="subtitulo">Un análisis desde Pierre Bourdieu</h2>
+                <div class="logos-portada">
+                    <span class="logo-fake netflix">N</span>
+                    <span class="logo-fake disney">D+</span>
+                    <span class="logo-fake max">MAX</span>
+                    <span class="logo-fake prime">prime</span>
+                </div>
+                
+                <p class="autor">Presentado por: William H Fonseca</p>
+                
+                <a href="pdf/Campo Plataformas de Streaming LatAm - William H Fonseca.pdf" class="btn-descarga" download="Campo Plataformas de Streaming LatAm - William H Fonseca.pdf" target="_blank">
+                    Descargar Documento Fuente (PDF)
+                </a>
+            </div>
+        </section>
+
+        <section class="diapositiva" data-slide="1">
+            <div class="contenido-slide centrado">
+                <h2 class="pregunta-clave">¿Alguna vez te has preguntado...</h2>
+                <h1 class="texto-gigante">POR QUÉ</h1>
+                <h2 class="pregunta-clave">el mundo del streaming funciona... así?</h2>
+                <p class="intro-texto">(No es casualidad. Es un juego.)</p>
+            </div>
+        </section>
+
+        <section class="diapositiva subportada" data-slide="2">
+            <div class="contenido-slide">
+                <h3 class="numero-seccion">01</h3>
+                <h1 class="titulo-seccion">EL CAMPO</h1>
+                <h2 class="pregunta-interactiva">
+                    Si el streaming es un juego...<br>
+                    <strong>¿Cómo es el "tablero" y quiénes juegan?</strong>
+                </h2>
+            </div>
+        </section>
+
+        <section class="diapositiva" data-slide="3">
+            <div class="contenido-slide">
+                <h2 class="titulo-slide">Las 4 Reglas (Tácitas) del Juego</h2>
+                <div class="reglas-grid">
+                    <div class="regla-card" data-modal-id="regla-contenido">
+                        <span class="icono-card">🎬</span>
+                        <h3>Contenido Atractivo</h3>
+                        <p>Global + Local<span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                    <div class="regla-card" data-modal-id="regla-adaptacion">
+                        <span class="icono-card">🌎</span>
+                        <h3>Adaptación Local</h3>
+                        <p>"Piensa Global, Actúa Local"<span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                    <div class="regla-card" data-modal-id="regla-precios">
+                        <span class="icono-card">💰</span>
+                        <h3>Modelo de Precios</h3>
+                        <p>Flexibilidad y "Bundles"<span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                    <div class="regla-card" data-modal-id="regla-innovacion">
+                        <span class="icono-card">⚡</span>
+                        <h3>Innovación Tecnológica</h3>
+                        <p>Apps fáciles (UX) y Algoritmos<span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" data-slide="4">
+            <div class="contenido-slide">
+                <h2 class="titulo-slide">Los Jugadores (Agentes)</h2>
+                <div class="agentes-container">
+                    <div class="agente-item" data-modal-id="agente-plataformas">
+                        <span class="icono-agente">📺</span>
+                        <h3>Plataformas</h3>
+                        <p><span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                    <div class="agente-item" data-modal-id="agente-productoras">
+                        <span class="icono-agente">🎥</span>
+                        <h3>Productoras</h3>
+                        <p><span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                    <div class="agente-item" data-modal-id="agente-telecos">
+                        <span class="icono-agente">📡</span>
+                        <h3>Telecomunicaciones</h3>
+                        <p><span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                    <div class="agente-item" data-modal-id="agente-reguladores">
+                        <span class="icono-agente">🏛️</span>
+                        <h3>Reguladores</h3>
+                        <p><span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="diapositiva" data-slide="5">
+            <div class="contenido-slide">
+                <h2 class="titulo-slide">Posiciones en el Campo</h2>
+                <div class="posiciones-diagrama">
+                    <div class="posicion dominante" data-modal-id="posicion-dominante">
+                        <h4>DOMINANTES</h4>
+                        <p>Netflix, Disney+, Max<span class="toca-para-mas">Toca para saber por qué</span></p>
+                    </div>
+                    <div class="posicion subordinada" data-modal-id="posicion-subordinada">
+                        <h4>SUBORDINADAS</h4>
+                        <p>Paramount+, Apple TV+<span class="toca-para-mas">Toca para saber por qué</span></p>
+                    </div>
+                </div>
+                <p class="explicacion-posicion">(Acumulan la mayoría del capital y definen las reglas)</p>
+            </div>
+        </section>
+
+        <section class="diapositiva subportada" data-slide="6">
+            <div class="contenido-slide">
+                <h3 class="numero-seccion">02</h3>
+                <h1 class="titulo-seccion">EL HABITUS</h1>
+                <h2 class="pregunta-interactiva">
+                    ¿Cómo saben los jugadores qué "jugada" hacer?<br>
+                    <strong>¿De dónde sacan ese "olfato"?</strong>
+                </h2>
+            </div>
+        </section>
+
+        <section class="diapositiva" data-slide="7">
+            <div class="contenido-slide">
+                <h2 class="titulo-slide">El Habitus: El "Sentido del Juego"</h2>
+                <div class="habitus-infografia">
+                    <div class="habitus-inputs">
+                        <span class="label-habitus">Se Forma de:</span>
+                        <div class="input-item" data-modal-id="habitus-fuentes">Experiencia, Imitación, Formación<span class="toca-para-mas">Toca para ver más</span></div>
+                    </div>
+                    <div class="habitus-flecha">➡️</div>
+                    <div class="habitus-cerebro" data-modal-id="habitus-definicion">
+                        <span class="icono-card">🧠</span>
+                        <h3>HABITUS</h3>
+                        <p>Mentalidad basada en DATOS<span class="toca-para-mas">Toca para ver más</span></p>
+                    </div>
+                    <div class="habitus-flecha">➡️</div>
+                    <div class="habitus-outputs">
+                        <span class="label-habitus">Produce:</span>
+                        <div class="output-item" data-modal-id="habitus-doxa">Define el "Éxito" y la "Doxa"<span class="toca-para-mas">Toca para ver más</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva subportada" data-slide="8">
+            <div class="contenido-slide">
+                <h3 class="numero-seccion">03</h3>
+                <h1 class="titulo-seccion">LOS CAPITALES</h1>
+                <h2 class="pregunta-interactiva">
+                    OK... ¿Y cuáles son las "fichas"<br>
+                    <strong>con las que se juega este juego?</strong>
+                </h2>
+            </div>
+        </section>
+
+        <section class="diapositiva" data-slide="9" id="diap-capitales">
+            <div class="contenido-slide">
+                <h2 class="titulo-slide">Los 5 Tipos de Capital (Las Fichas)</h2>
+                <p class="instruccion-interactiva">Toca un ícono para ver la explicación</p>
+                <div class="capitales-container">
+                    <div class="capital-item" data-modal-id="capital-economico">
+                        <span class="icono-capital">💰</span>
+                        <label>Económico</label>
+                    </div>
+                    <div class="capital-item" data-modal-id="capital-cultural">
+                        <span class="icono-capital">🎬</span>
+                        <label>Cultural</label>
+                    </div>
+                    <div class="capital-item" data-modal-id="capital-tecnologico">
+                        <span class="icono-capital">🤖</span>
+                        <label>Tecnológico</label>
+                    </div>
+                    <div class="capital-item" data-modal-id="capital-social">
+                        <span class="icono-capital">🤝</span>
+                        <label>Social</label>
+                    </div>
+                    <div class="capital-item" data-modal-id="capital-simbolico">
+                        <span class="icono-capital">👑</span>
+                        <label>Simbólico</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva subportada" data-slide="10">
+            <div class="contenido-slide">
+                <h3 class="numero-seccion">04</h3>
+                <h1 class="titulo-seccion">EL CAPITAL SIMBÓLICO</h1>
+                <h2 class="pregunta-interactiva">
+                    ¿Por qué el "PRESTIGIO"<br>
+                    <strong>es la meta final de todos?</strong>
+                </h2>
+            </div>
+        </section>
+
+        <section class="diapositiva" data-slide="11">
+            <div class="contenido-slide">
+                <h2 class="titulo-slide">El Prestigio es la Meta</h2>
+                <h3 class="subtitulo-slide">¿Qué lo otorga?</h3>
+                <div class="simbolico-grid">
+                    <div class="simbolico-item" data-modal-id="prestigio-premios">
+                        <span class="icono-card">🏆</span>
+                        <h3>Premios y Galardones</h3>
+                        <p><span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                    <div class="simbolico-item" data-modal-id="prestigio-innovacion">
+                        <span class="icono-card">💡</span>
+                        <h3>Innovación Pionera</h3>
+                        <p><span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                    <div class="simbolico-item" data-modal-id="prestigio-cultura">
+                        <span class="icono-card">🗣️</span>
+                        <h3>Cultura Popular</h3>
+                        <p><span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                    <div class="simbolico-item" data-modal-id="prestigio-marca">
+                        <span class="icono-card">💎</span>
+                        <h3>Imagen de Marca</h3>
+                        <p><span class="toca-para-mas">Toca para saber más</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="diapositiva subportada" data-slide="12">
+            <div class="contenido-slide">
+                <h3 class="numero-seccion">05</h3>
+                <h1 class="titulo-seccion">LA TRANSFORMACIÓN</h1>
+                <h2 class="pregunta-interactiva">
+                    Lo más fascinante no es tener las fichas...<br>
+                    es cómo las "CONVIERTEN".
+                </h2>
+            </div>
+        </section>
+        
+        <section class="diapositiva" data-slide="13" id="diap-transformacion">
+            <div class="contenido-slide">
+                <h2 class="titulo-slide">El Verdadero Juego: Convertir Capitales</h2>
+                <div class="transformacion-grid">
+                    
+                    <div class="conversion-item" data-modal-id="conv-eco-cult">
+                        <span class="capital-tag economico">💰 Económico</span>
+                        <span class="flecha">➔</span>
+                        <span class="capital-tag cultural">🎬 Cultural</span>
+                        <p>Dinero ➔ Contenido<span class="toca-para-mas">Toca para ver ejemplo</span></p>
+                    </div>
+
+                    <div class="conversion-item" data-modal-id="conv-cult-eco">
+                        <span class="capital-tag cultural">🎬 Cultural</span>
+                        <span class="flecha">➔</span>
+                        <span class="capital-tag economico">💰 Económico</span>
+                        <p>Contenido ➔ Dinero<span class="toca-para-mas">Toca para ver ejemplo</span></p>
+                    </div>
+                    
+                    <div class="conversion-item" data-modal-id="conv-soc-eco">
+                        <span class="capital-tag social">🤝 Social</span>
+                        <span class="flecha">➔</span>
+                        <span class="capital-tag economico">💰 Económico</span>
+                        <p>Alianzas ➔ Dinero<span class="toca-para-mas">Toca para ver ejemplo</span></p>
+                    </div>
+                    
+                    <div class="conversion-item" data-modal-id="conv-sim-eco">
+                        <span class="capital-tag simbolico">👑 Simbólico</span>
+                        <span class="flecha">➔</span>
+                        <span class="capital-tag economico">💰 Económico</span>
+                        <p>Prestigio ➔ Dinero<span class="toca-para-mas">Toca para ver ejemplo</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" data-slide="14">
+            <div class="contenido-slide">
+                <h2 class="titulo-slide">La Conclusión: ¿Cuál es el verdadero juego?</h2>
+                <h3 class="subtitulo-slide">No es solo tener capital, es saber convertirlo.</h3>
+                
+                <div class="conclusion-flow">
+                    <div class="conclusion-item">
+                        <span class="capital-tag economico">💰 Dinero</span>
+                        <span class="signo-mas">+</span>
+                        <span class="capital-tag cultural">🎬 Contenido</span>
+                    </div>
+                    
+                    <div class="conclusion-item-secundario">
+                        (Usando 🤝 Alianzas y 🤖 Tecnología)
+                    </div>
+
+                    <span class="flecha-larga">⬇️</span>
+                    
+                    <div class="conclusion-item capital-meta">
+                        <span class="capital-tag simbolico">👑 PRESTIGIO</span>
+                        <span>(La Meta Final)</span>
+                    </div>
+                    
+                    <span class="flecha-larga">⬇️</span>
+                    
+                    <div class="conclusion-item capital-meta-final">
+                        <span class="capital-tag economico">💰 RENTABILIDAD</span>
+                        <span>(El Círculo se Cierra)</span>
+                    </div>
+                </div>
+                
+                <p class="explicacion-conclusion">
+                    El éxito no depende de <strong>una sola cosa</strong>. Es un juego en <strong>varios frentes a la vez</strong>.<br>
+                    Se usa Dinero, Contenido, Alianzas y Tecnología para construir <strong>PRESTIGIO</strong>.<br>
+                    Ese Prestigio (la reputación) es lo que finalmente se convierte en <strong>RENTABILIDAD</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section class="diapositiva" data-slide="15">
+            <div class="contenido-slide">
+                <h1 class="titulo-seccion">¡Gracias!</h1>
+                <h2 class="pregunta-interactiva">
+                    La próxima vez que abras tu app...<br>
+                    la verás con ojos diferentes.
+                </h2>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="nav-controls">
+        <button id="btn-anterior" class="nav-btn">‹</button>
+        <span id="contador-slide">1 / 16</span>
+        <button id="btn-siguiente" class="nav-btn">›</button>
+    </div>
+
+    <div id="modal-container" class="modal-oculto">
+        <div class="modal-contenido">
+            <button id="modal-btn-cerrar" class="modal-cerrar-btn">&times;</button>
+            <h2 id="modal-titulo"></h2>
+            <div id="modal-texto"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
